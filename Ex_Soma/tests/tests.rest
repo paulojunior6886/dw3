@@ -1,0 +1,35 @@
+### teste somar
+POST http://localhost:40000/somar HTTP/1.1
+content-type: application/json
+
+{
+  "num1": 4,
+  "num2": 2
+}
+
+### teste subtrair
+POST http://localhost:40000/subtrair HTTP/1.1
+content-type: application/json
+
+{
+  "num1": 4,
+  "num2": 2
+}
+
+### teste multiplicar
+POST http://localhost:40000/multiplicar HTTP/1.1
+content-type: application/json
+
+{
+  "num1": 4,
+  "num2": 2
+}
+
+### teste dividir
+POST http://localhost:40000/dividir HTTP/1.1
+content-type: application/json
+
+{
+  "num1": 4,
+  "num2": 2
+}
