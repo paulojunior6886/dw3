@@ -1,0 +1,19 @@
+// apps/login/tests/testLogin.rest
+// # Teste de login
+POST http://localhost:40000/Login HTTP/1.1
+Content-Type: application/json
+// Authorization: Bearer eyJhbGciOiJIUzI
+
+{
+	"username": "qwe",
+	"password": "qwe"
+}
+
+###
+
+// # Teste de logout
+POST http://localhost:40000/Logout HTTP/1.1
+Content-Type: application/json
+// Authorization: Bearer eyJhbGciOiJIUzI1NiI
+
+{}
