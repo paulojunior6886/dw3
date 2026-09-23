@@ -6,6 +6,7 @@ var nunjucks = require('nunjucks');
 var indexRouter = require('./routes/rtIndex');
 var loginRouter = require('./routes/rtLogin');
 var homeRouter = require('./routes/rtHome');
+var alunosRouter = require('./routes/rtAlunos'); // 1. Importa a rota
 
 require('dotenv').config({
     path: path.join(__dirname, 'frontend.env'),
@@ -31,11 +32,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/apps', express.static(appsPath));
+app.use('/apps', express.static(path.join(__dirname, 'apps')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/home', homeRouter);
+app.use('/alunos', alunosRouter); // 5. Registra o endpoint /alunos
 
 app.use(function (req, res, next) {
     next(createError(404));

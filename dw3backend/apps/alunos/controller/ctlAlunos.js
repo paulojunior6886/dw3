@@ -46,9 +46,16 @@ const DeleteAluno = (request, res) =>
     res.json({ "status": msg, "linhasAfetadas": linhasAfetadas });
   })();
 
+const GetCursosToAlunos = (req, res) =>
+  (async () => {
+    let registro = await mdlAlunos.GetCursosToAlunos();
+    res.json({ status: "ok", "registro": registro });
+  })();
+
 module.exports = {
   GetAllAlunos,
   GetAlunoByID,
+  GetCursosToAlunos, // Adicionado
   InsertAluno,
   UpdateAluno,
   DeleteAluno
