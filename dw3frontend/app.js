@@ -7,6 +7,7 @@ var indexRouter = require('./routes/rtIndex');
 var loginRouter = require('./routes/rtLogin');
 var homeRouter = require('./routes/rtHome');
 var alunosRouter = require('./routes/rtAlunos'); // 1. Importa a rota
+var cursosRouter = require('./routes/rtCursos'); // Rota cursos
 
 require('dotenv').config({
     path: path.join(__dirname, 'frontend.env'),
@@ -38,6 +39,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/home', homeRouter);
 app.use('/alunos', alunosRouter); // 5. Registra o endpoint /alunos
+app.use('/cursos', cursosRouter);
 
 app.use(function (req, res, next) {
     next(createError(404));

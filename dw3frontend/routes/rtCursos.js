@@ -1,0 +1,24 @@
+// Arquivo: routes/rtCursos.js
+var express = require('express');
+var router = express.Router();
+
+router.get('/', function(req, res) {
+  res.render('cursos/vwLstCursos', {
+    title: 'Cursos',
+    showNavbar: true,
+    activeMenu: 'cursos',
+    servidorDw3: process.env.SERVIDOR_DW3
+  });
+});
+
+// Rota para o formulário de Cursos
+router.get('/form', function(req, res) {
+  res.render('cursos/vwFormCursos', {
+    title: 'Formulario de Cursos',
+    showNavbar: true,
+    activeMenu: 'cursos',
+    servidorDw3: process.env.SERVIDOR_DW3
+  });
+});
+
+module.exports = router;
